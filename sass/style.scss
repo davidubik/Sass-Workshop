@@ -1,0 +1,63 @@
+
+@import "libs/responsive.scss";
+
+
+
+body{
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+%btn{
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 5px 12px;
+}
+
+%shadow{
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+}
+
+.btn{
+   @extend %btn;
+    background: rgb(103, 199, 234);
+    color: #fff;
+    &:hover{
+        background: rgb(79, 160, 189);
+    }
+}
+
+.btn-danger{
+    @extend .btn;
+    background: red;
+    &:hover{
+        background: rgb(167, 9, 9);
+    }
+}
+
+.card{
+    padding: 10px;
+    @extend %shadow;
+    border-radius: 3px;
+}
+
+.card-action{
+    @extend .btn;
+}
+
+.card-cancel{
+    @extend .btn-danger
+}
+
+.card-actions{
+    display: flex;
+}
+
+@media #{$medium-down}{
+    .card-actions{
+        display: block;
+    }
+    .btn{
+        width:100%;
+    }
+}
